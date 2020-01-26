@@ -12,6 +12,7 @@ export const typeDefs = gql`
     description: String!
     postType: String!
     link: String
+    createdAt: String!
   }
 
   type Mutation {
