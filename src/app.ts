@@ -9,7 +9,7 @@ import PostsController from './controllers/posts.controller';
 import { typeDefs } from './schema/typeDefs';
 import { resolvers } from './schema/resolvers';
 
-const MONGO_URL = process.env.MONGO_URL || 'mongodb://localhost:27017/posts_api'
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/posts_api'
 
 class App {
   public app: Application;
@@ -35,7 +35,7 @@ class App {
   private setupMongoDBConfig(): void {
     mongoose.Promise = global.Promise;
 
-    mongoose.connect(MONGO_URL, {
+    mongoose.connect(MONGODB_URI, {
       useNewUrlParser: true,
       useUnifiedTopology: true
     })
